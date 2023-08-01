@@ -1,0 +1,195 @@
+Download
+
+Source
+
+PDF
+Actions
+   Copy Project
+   Word Count
+Sync
+   Dropbox
+   Git
+   GitHub
+Settings
+Compiler
+
+Track changes is on
+Towards Demystifying Transformations of Tchaikovsky’s Children’s Album with
+Support of Computational Models: Problem Conceptualization
+
+
+Abstract—Though the studies of rich metaphors hidden in the
+musical compositions lay mostly in scope of art and musicology,
+there is still large space for formal methods based on mathe-
+matical models and computer technology that can be helpful in
+discovering complementary insights to how the composition is
+structured, what are its relationships to the precursors’ works,
+and how it affects the later works of the same or other authors.
+Our idea is to investigate how computational models can enhance
+musicology research on music style identification and comparative
+analysis using the case study of Tchaikovsky’s Children’s Album.
+Keywords–Musicology; music information retrieval; human-
+centric computing; similarity; music modeling.
+I. INTRODUCTION
+In my recent talk on Jan 6th, 2021, in the University of
+Aizu “Tchaikovsky. Children’s (?) Album: Time, Metaphors,
+Rediscoveries” [1], I discussed the phenomenon of Piotr
+Tchaikovsky’s “Children’s Album” for piano solo (Op. 39) [2].
+This masterpiece was composed and published as far as in
+1878, but today it still remains one of constant topics of interest
+for researchers [3], [4]. Though the study of rich metaphors
+hidden in the pieces thought to be for children rather lies in the
+scope of art and musicology, there is still a large research space
+for formal methods based on mathematical and computational
+models, which may give additional insights into our under-
+standing of the structure and organization of the whole work,
+its relationships to precursors such as “43 Clavierst ̈ucke f ̈ur die
+Jugend” by Robert Schumann [5], as well as the reasons for
+significant differences between the original manuscript and the
+first published edition. Surprisingly, in musicology literature,
+one of the first careful studies of transformations between
+the manuscript and the published edition can be found in the
+early 1990s only; thus, more than 100 years after the whole
+work was completed [6], [7]. These studies mostly remain in
+scope of music and art theory, with almost no involvement
+of machine learning approaches. Today, it is commonly not
+disputed that computer science and artificial intelligence may
+contribute to musicology research on music style identification
+and comparative analysis. In this study we try to discover
+appropriate formal models that would enhance the analysis and
+understanding of Tchaikovsky’s “Children’s Album”, which
+can be considered as a very good example of applied human-
+centric computing research in the frame of art and humanities,
+where solutions cannot be designed within a certain context
+only, but require intensive cross-disciplinary efforts so as to
+bridge the communities working in different contexts and using
+different vocabularies [8].
+II. RELATED WORK
+According to Nattiez, music is a symbolic fact charac-
+terized by the complex configuration of interpretants [9]. In
+music, we use various connected but independent models
+including letter-based notations such as Helmholz or scientific
+pitch notation (that can be considered as simple syntax based
+language constructions), complex symbolic notations in the
+form of graphic note scores ranging from hardly formalizable
+ancient models such as Znamenny chant, at one pole, or
+relatively strict Mensural notation, at another pole, up to
+modern sheet music (based on many rules but giving some
+freedom to support the individual styles of composers), piano
+roll notation, tablature, MIDI representations, as well as audio
+signals and even spectral models such as acoustic fingerprints.
+The great variety of models used for music representation is
+one of reasons why music provides an interesting and complex
+use case for experimenting with information retrieval, object
+recognition and classification algorithms. Music representation
+complexity can be explained by the presence of two arrays of
+elements and relationships, where the first one corresponds
+to the elements that can be treated mathematically (such as
+pitch, rhythm, or harmony), while the second one includes
+non-mathematical elements such as tension, expectancy, and
+emotion [10].
+A. Bridging the gap between pure musicology and applied
+human-centric computer technology
+Current approaches to music similarity evaluation (in-
+cluding our own work on melody extraction and similarity
+estimation using Earth Mover’s Distance algorithms [11])
+mostly target the searching and retrieval systems including
+well-known apps such as Shazam [12], without a perfect fit
+to the problems of stylistic similarity evaluation. From this
+point of view, models of functional representation of music
+harmony and harmonic similarity estimation [13] seem to be
+more adequate to the problem of style identification. Indeed,
+usually, listeners can recognize similarity of compositions
+because of their harmonic similarity (see Figure 1). However,
+it does not immediately lead us to clearly conclude about the
+composition’s stylistic resemblances or dependencies. Even
+harmonic equivalence may not be enough to recognize the
+melody, as demonstrated in [14] and later analyzed in [15]
+in the experiments with melodies distorted by substituting the
+note octave by randomly selected ones within three octaves:
+every note in the sequence keeps its position on the scale,
+but the tune varies over a three-octave range (similarly to an
+example of such distortion shown in Figure 2).
+Figure 1. Harmony resemblance between Beethoven’s Moonlight Sonata and
+its variation
+Figure 2. Distorted note sequence of Beethoven’s Moonlight Sonata with
+keeping harmonic equivalence)
+Harmonic functions were core elements of SPEAC music
+representation system developed by Cope [16], [17], which is
+an implementation of augmented transition network, a finite-
+state automaton with recursive succession rules between music
+sub-phrases allowing for logical syntax substitutions [18].
+Cope’s SPEAC system is based on a hierarchical representation
+of the structure of music composition in nested contexts
+beginning from notes and chords up to chapters and parts (see
+Figure 3 (a)). Five identifiers contributing to SPEAC acronym
+stand for statement S, preparation P , extension E, antecedent
+A, and consequent C, all of which are kinds of abstractions
+assigned to groups of notes “depending on levels of tension
+between intervals, metrical placement, and agogic emphasis,
+measured both in the preceding and following groups” [18].
+Succession rules defined by Cope limit possible transitions
+between the SPEAC states (see Figure 3 (b)). Therefore,
+SPEAC progressions are like genome sequences using SPEAC
+identifiers as bases enforced by harmonic tension weights
+and hierarchical relationships between progressions at different
+levels. Modeling music structure using SPEAC-analysis can be
+a promising approach to model music style similarity through
+SPEAC progression similarity as well as similarity between
+the corresponding graphs that can be constructed, specifically
+with respect to recent implementations available as libraries in
+universal languages such as Python [19].
+Due to a large number of applications of using deep neural
+networks for object recognition and classification (especially
+for image recognition, including such subjective trait as image
+aesthetics), machine learning approaches and recurrent neural
+networks may be promising for music style identification,
+Figure 3. Progression bases in SPEAC system by David Cope.
+classification and analysis. Though, in contrast to a variety of
+works on computer music generation, we argue that the main
+challenge is not to teach AI to create art objects, but to be able
+to help us in perceiving objects created by humans [20].
+B. Renditions and Implications of “Children’s Album”
+Since both Tchaikovsky and Schumann belong to the ro-
+mantic tradition rooted in part of leitmotif music by Beethoven
+and Wagner, on the one hand, and in the new music language of
+Glinka, Chopin and Liszt, on the other hand, certain harmony
+and music development similarity surely exists in their works.
+According to the network of influences on classical composers
+originally described by Smith and Georges et al. in the original
+Classical Music Navigator [21], Schumann is one of composers
+who greatly influenced Tchaikovsky (along with Balakirev,
+Beethoven, Chopin, Delibes and others) as shown in Figure 4,
+However, admitting Schumann’s influence to Tchaikovsky
+does not lead us to automatically judge the “Children’s Album”
+as an imitation of Schumann’s pieces for the young (also with
+long history of editions but rather few scholarly studies [23])
+even though Tchaikovsky claimed it explicitly in the subtitle
+for the published edition “24 simple pieces for children like
+Schumann” (but not in the manuscript! [24]. What if this
+subtle (?) subtitle is a kind of hint that Tchaikovsky gave
+us? Like saying: “Well, it is definitely not “like Schumann”!
+Should you then believe in the appropriateness of all made
+transformations?” These transformations (see Figure 5) destroy
+the structure of the album as an indissociable whole, and
+deform the micro-cycles existing in the manuscripts (where
+the Doll cycle is the clearest case), as well as harmonic links
+such as between the first and the last pieces in the manuscript,
+“Morning prayer” and “The hurdy-gurdy man is singing”,
+respectively.
+An idea that changes in the order of compositions between
+the manuscript and first published edition were mistakenly in-
+troduced by the publisher could not be accepted as convincing
+enough: indeed, Tchaikovsky approved this version. Nekhaeva
+suggested that these transformations can be considered as a
+“gesture of the composer, a natural desire to overcome the
+temporary barrier and directly appeal to future generations of
+musicians” [4]. This opinion supports an existing hypothesis
+claiming that Tchaikovsky probably preferred to hide some
+metaphors so that they are not so explicitly exposed as in the
+manuscript. From the perspective of musicology, we could not
+expect to find a final answer (and perhaps it is not needed).
+Instead, a possibility to incorporate formal computational
+approaches into informal art discourse can, produce a number
+of important additional insights for better understanding of
+genesis of one of Tchaikovsky’s masterpieces in piano music.

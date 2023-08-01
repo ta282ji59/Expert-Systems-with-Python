@@ -1,0 +1,246 @@
+
+
+However, there are frequent situations when the planning parameters can only be partially defined, the perfect timing or exact location are unknown, and the decision frame is rather fuzzy. For example, we know or are observing an interesting location which is worth visiting, but could not decide in advance on a suitable time frame for such a visit (such as a better season) and a list of possible side activities that would extend a user’s experience significantly (such as visiting exhibitions or museums).
+
+Even for the scenarios of standard meeting schedulers aimed at managing the event time, meeting rooms, discussion topics, and lists of attendees; there is space for less decided situations. For example, let's consider the planning process for attending an academic conference. Depending on the conducted research, the authors could consider a range of appropriate conferences, while the exact venue may be unknown in advance. Nevertheless, reminders on the approaching deadlines may be helpful for a team lead, though actually it does not necessarily mean that the paper will be submitted.  
+
+The remaining text is organized as follows. 
+Section~\ref{sec:related} briefly describes a number of related studies, which are helpful for  better positioning of our current work.  Section~\ref{sec:concept} introduces the concept of soft planning and draws on the examples of possible scenarios that can be targeted by the system in focus. Section~\ref{sec:pilots} sums up the lessons learned while developing the components partially implementing the requirements defined at the stage of project conceptualization. Section~\ref{sec:conclusion} concludes the paper and outlines the aspects to be considered in future work. 
+
+\section{Related Studies}
+\label{sec:related}
+
+In our earlier works, we introduced a concept of \textit{soft planning} being a metaphor for personalized situational planning scenarios which are (1) not particularly certain, (2)
+may be implemented when some suitable situation
+takes place (e.g. time and/or locations are not fixed in advance), and (3) in principle, might not be implemented at all~\cite{tang2019ontological,tang2021managing}.
+
+Present-day mobile devices form an ecosystem for the personalization of digital services they provide. In part, support for different kinds of notifications is one of the key features of present-day smart devices~\cite{weber2018snooze}; smart device notifications are no longer just situational alerts, they become an integral proactive component of mobile services
+engaging with their users~\cite{pielot2018dismissed, poguntke2020notimodes} or enabling them to manage their activity-related choices, for example, through the check-in mechanisms used in social networks~\cite{hasan2013understanding}. Such proactive services help to overcome the limitations of human decision-making conditioned by the naturally limited capabilities of individuals to memorize, store or organize information~\cite{march1994primer,polivc2009decision}. Notifications give the common approach to link the current context to a situation which might be distant in time or/and location, while this context, in turn, can be ``pre-programmed'' by the user as a description of a deferred action to be implemented later. 
+
+
+
+Here are some model scenarios illustrating the concept of soft planning:
+
+Mobile Notification Service for
+Location-based Situational Planning:
+Pilot Project and Lessons Learned
+
+Abstract. Digital transformation suggests a high degree of automation while man-
+aging social behavior and planning individual or collaborative activities. Most
+scheduling and planning solutions are based on time, task and resource manage-
+ment. In this work, we consider the scenarios of so-called “soft” planning, which
+assumes the exact timing of activities might be unknown and dependent on flex-
+ible conditions. We conceptualize the project with the help of such instruments
+as common-sense ontology, domain-specific ontology, software requirements visu-
+alization, and visual statechart formalism. This particular contribution focuses on
+the challenges of developing a mobile notification service for managing activities
+“pre-programmed” by the user, in which notifications are issued if the user enters
+a location suitable for implementing the desired deferred action. The suggested
+ontology-based model does not assume using or improving formal optimal time or
+task scheduling, but suggests an approach for informal practical computer-assisted
+decision-making involving typical scenarios appearing in everyday life. We piloted
+a number of prototypes for location-based user-oriented reminder setup and notifi-
+cation management, partially fitting the requirements and major scenarios of a soft
+planning system. Based on the experiments with the developed prototype apps for
+Android, we elicit a number of important aspects of further work towards achiev-
+ing the location-based situational planning and notification management solutions
+adopted for practical use.
+Keywords. time management, notification, geofence, mobile app, software modeling
+1. Introduction
+Technological support for different types of social activity planning is one of many as-
+pects of human life digitalization. We know many software solutions and smartphone-
+based implementation addressing time, budget, or location management, such as
+computer-assisted time, budget, activity or project scheduling [1,2,3,4], event-based so-
+cial activity planning [5,6], or travel planning [7,8,9,10]. Most practical solutions imple-
+ment the determined scenarios when the constraints and conditions (goals, time, location,
+activities, and participants) are known in advance. For example, planning a meeting usu-
+ally assumes setting time and location information, sending confirmations to the involved
+1Corresponding Author: Evgeny Pyshkin, University of Aizu, Tsuruga Ikki-machi, Aizu-Wakamatsu
+9658580, Japan; E-mail: pyshe@u-aizu.ac.jp
+participants, etc. There is also a growing interest in developing personalized systems
+extending user experience based on using social network data and personal user profiles,
+which are often linked to location data as well [11,12,13], for example, in numerous
+solutions for travelers [14,15,16,17].
+However, there are frequent situations when the planning parameters can only be
+partially defined, the perfect timing or exact location are unknown, and the decision
+frame is rather fuzzy. For example, we know or are observing an interesting location
+which is worth visiting, but could not decide in advance on a suitable time frame for such
+a visit (such as a better season) and a list of possible side activities that would extend a
+user’s experience significantly (such as visiting exhibitions or museums).
+Even for the scenarios of standard meeting schedulers aimed at managing the event
+time, meeting rooms, discussion topics, and lists of attendees; there is space for less
+decided situations. For example, let’s consider the planning process for attending an
+academic conference. Depending on the conducted research, the authors could consider
+a range of appropriate conferences, while the exact venue may be unknown in advance.
+Nevertheless, reminders on the approaching deadlines may be helpful for a team lead,
+though actually it does not necessarily mean that the paper will be submitted.
+The remaining text is organized as follows. Section 2 briefly describes a number of
+related studies, which are helpful for better positioning of our current work. Section 3
+introduces the concept of soft planning and draws on the examples of possible scenarios
+that can be targeted by the system in focus. Section 4 sums up the lessons learned while
+developing the components partially implementing the requirements defined at the stage
+of project conceptualization. Section 5 concludes the paper and outlines the aspects to be
+considered in future work.
+2. Related Studies
+In our earlier works, we introduced a concept of soft planning being a metaphor for
+personalized situational planning scenarios which are (1) not particularly certain, (2) may
+be implemented when some suitable situation takes place (e.g. time and/or locations are
+not fixed in advance), and (3) in principle, might not be implemented at all [18,19].
+Present-day mobile devices form an ecosystem for the personalization of digital ser-
+vices they provide. In part, support for different kinds of notifications is one of the key
+features of present-day smart devices [20]; smart device notifications are no longer just
+situational alerts, they become an integral proactive component of mobile services en-
+gaging with their users [21,22] or enabling them to manage their activity-related choices,
+for example, through the check-in mechanisms used in social networks [23]. Such proac-
+tive services help to overcome the limitations of human decision-making conditioned by
+the naturally limited capabilities of individuals to memorize, store or organize informa-
+tion [24,25]. Notifications give the common approach to link the current context to a sit-
+uation which might be distant in time or/and location, while this context, in turn, can be
+“pre-programmed” by the user as a description of a deferred action to be implemented
+later.
+3. “Soft Planning”: Revisiting the Concept
+3.1. Situational Planning by Examples
+Here are some model scenarios illustrating the concept of soft planning:
+1. Someone realizes that some product or household item is missing at home (Fig-
+ure 1). It is not so urgent that one must go to find it immediately. Instead, it might
+be helpful to be reminded while the person in charge is in or nearby the particular
+stores, where this item can be found. Thus, exact time or even location might be
+unknown.
+Figure 1. Soft planning in shopping.
+2. A traveler discovers an interesting sightseeing spot which is worth visiting at a
+later date (Figure 2). Thus, the exact time frame for a visit might be unknown,
+but a reminder could be helpful to describe a kind of deferred activity that can be
+suggested as soon as it happens that the traveler is nearby this location again (for
+example, driving in the area because of some business) but in a better season.
+Figure 2. Soft planning while travelling.
+3. A theatre or cinema lover would like to watch a particular performance (maybe
+still unreleased) as soon as it becomes available for watching or booking.
+4. A householder needs to do some housework, where specific timing is unknown or
+not so important. The reminders could be helpful but only while being at home.
+3.2. Conceptualization
+It is commonly agreed that conceptualization is an important process, which often
+involves ontology-based approaches for system design and requirement engineering
+stages [26,27,28]. Constructing an ontology model helps in eliminating redundant infor-
+mation and defining project scope better. As a conceptual core of the whole project, the
+common-sense ontology is linked to domain-specific ontologies and provides grounds
+Figure 3. Iterations in model conceptualization.
+for requirement elicitation. Software prototyping helps us to refine the requirements and
+revisit the ontology models as well, and improve our understanding of the system scope
+and boundaries (Figure 3).
+Figure 4. Soft planning system: common-sense ontology (revised against [18]).
+Figure 4 illustrates the conceptual model of soft planning through constructing a
+common-sense ontology. The user’s activity, situation, and ideas influence the plan,
+where the user is involved in the activity, and the activity is contextualized by the situa-
+tion and suggested by the system. The user defines the desired reminders through condi-
+tions or properties. The common-sense ontology can be naturally connected to the sub-
+ject domain ontology (such as one in Figure 5) providing grounds to discover major
+entities to be modeled in the system and their key relationships.
+The condition of the reminder in this system is mainly determined by the time and
+location. The location consists of a current location and a programmed location, the
+latter being the location generated by the system. According to the suggested model, the
+reminders set by the user are assumed to belong to the following major classes:
+Figure 5. Domain-specific entities.
+1. Active reminders are to be configured by the user and processed by the system so
+that when the appropriate user conditions (such as being near the desired loca-
+tion) are fulfilled, the system issues a notification.
+2. Templates are reminder configurations stored in the system for future use to fa-
+cilitate the future notification setup. The templates are assumed to be configured
+partially, or suggested by the system for common or frequent scenarios.
+3. Suspended reminders are those delayed by the user. For suspended reminders, the
+user may need specific configuration options referring to the earlier established
+policies (such as reactivate the reminder after a certain period of time, reactivate
+it manually, or even notify the user about the existing suspended actions).
+4. Archived reminders may be useful for the cases if the user wishes to save the
+previously configured reminders for future reactivation instead of trashing them.
+3.3. Major Use Cases
+Figure 6 shows the major scenarios to be supported by this system.
+3.4. Reminders and Notifications: Workflow
+Based on reminder status definitions, we defined two major stages of reminder setting
+and notification management presented in Figures 7– 8 using the statechart behavioral
+models based on Harel’s statechart formalism [29].
+Figure 6. Major use cases in the soft planning system.
+Figure 7 drafts the superstate Setting and configuring a reminder describing major
+events and actions to create a reminder, manage the lists of active and archived reminders,
+save, or delete reminders.
+Figure 8 sketches the superstate Working with issued notifications supporting such
+transactions as “forgetting” the reminder, archiving it, keeping it active, or re-configuring
+it (thus, triggering the system back to the superstate Setting and configuring a reminder).
+4. Piloting Prototypes: Lessons Learned
+To improve our understanding of the project goals and challenges to resolve, we experi-
+mented with several prototype implementations developed as Android applications. Ex-
+perimental components partially address the use cases presented in Figure 6. This section
+describes the lessons learned as a result of experiments with developed prototypes.
+4.1. Geofencing in the Context of Soft Planning
+The trickiest problem of situational planning scenario implementation is to assure that
+relevant notifications are issued in connection to specific locations. To achieve this,
+location-based services such as geofences are required. Geofences define virtual geo-
+graphic boundaries (usually connected to some point of interest) and enable registered
+applications to trigger responses when a mobile device enters or leaves a particular area
+(see, for example, [30]). Geofences can be set with geographic coordinates, geometric
+Figure 7. Setting a reminder.
+Figure 8. Working with issued notifications.
+parameters (such as radius for circular geofences), duration, and transition types. They
+are often connected with the points of vision while constructing traveling itineraries
+and tourist guides [31]. Figure 9 illustrates the main scenario and the main eventual
+issue: using the geometry-based distancing to decide on notification upon entering the
+geofence area might lead to annoying and unreliable notifications or never-ending re-
+minders. Therefore, it is important to elicit a number of aspects to be taken into the
+consideration while implementing a practical location-based notification service:
+1. Recommendations and proximity evaluation may differ significantly depending
+on the means of transportation.
+2. Landscape characteristics (especially while walking or cycling may affect user’s
+wish to proceed with the suggested deferred activity.
+Figure 9. Location-based scenario: planning → geofencing → action.
+3. Possible waiting time or preliminary booking required at the recommended loca-
+tion could make a suggestion hard to follow.
+4. Using programmed reminders together with a reasoning engine may be helpful
+for getting some more information about “softly” planned activities referring to a
+selection of possible locations rather than to a specific one (like “any food store”
+but not a particular one).
+5. Conversion of a reminded activity to a regular plan to be included in the calendar
+or time scheduler might need integration with popular time management services.
+We used a combination of system alarms, calendars, and notifications for point-in-
+time and time-period reminders; and added voice input and cloud sync to make it easier
+to use. For location-based reminders, we used a combination of Google’s geofence and
+cloud services to synchronize the geofence coordinates created in the database with the
+cloud. The system can send the corresponding notification when the user enters or leave
+the registered geofence. It is helpful for further debugging and evaluation.
+4.2. Third-Party Services
+The following third-party services are shown to be helpful for developing a prototype
+implementation:
+1. iFLYTEK Speech Recognition – The component is used to recognize short audio
+and convert into text in real time [32], thus, supporting voice input.
+2. Google Geofence – Geofencing combines awareness of the user’s current location
+with awareness of the user’s proximity to locations that may be of interest[33]. It
+is used for creating location-based notifications.
+3. Nutstore WebDav – Using WebDav and Firebase[34] helps in backing-up the
+configured reminder information to ensure that users can change or use it multi-
+ple devices supporting such options as direct online editing, version control, and
+collaborative editing[35]. The data synchronize component uses a cloud service
+that supports WebDav protocol. The advantage of such an architecture is that the
+developer does not need to develop a separate server-side program. However, the
+user needs to be registered with the cloud service provider.
+4.3. Client Environment
+The proof-of-concept client applications running under Android 10.0 run-time environ-
+ment were developed using Java and Kotlin.
+5. Conclusion and Future Work
+The scenarios of soft planning may be considered as an element of activity-centric com-
+puting paradigm addressing the multi-faceted nature of human activity in the real world,
+when people tend to create “activity representations that are simple, yet flexible enough
+to accommodate different levels of rigidity” [36] and “re-program” their future experi-
+ence based on the feedback they may have from the current activity, or from the experi-
+ence of other users.
+There is a number of issues requiring further efforts to move the project towards its
+practical use:
+• Identification of possible useful scenarios of user collaboration in setting and using
+“soft” plans;
+• Integration of soft planners with regular time schedulers and activity organizers;
+• Possibilities to apply knowledge-based recommendation and NLP algorithms so
+that to identify and suggest the suitable scenario to the user semi-automatically.
+Though the current stage of the project does not involve sufficient arguable experi-
+mental results to contrast the approach against the existing human-centric solutions (usu-
+ally actively involving machine learning algorithms), we believe that the presented con-
+ceptualization creates grounds for improving personalized services and environments for
+practical ubiquitous time and activity management.
+
+
